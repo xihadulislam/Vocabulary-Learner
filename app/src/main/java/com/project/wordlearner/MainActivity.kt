@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         Log.d("jjj", "getData: "+list[2].pron)
     }
 
-
     private fun getQuestionsListFromJsonString(json: String?): List<Data> {
         return GsonBuilder().create().fromJson(json, Array<Data>::class.java).toList()
     }
