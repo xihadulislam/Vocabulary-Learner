@@ -1,4 +1,4 @@
-package com.project.wordlearner
+package com.project.wordlearner.data.models
 
 import com.google.gson.annotations.SerializedName
 

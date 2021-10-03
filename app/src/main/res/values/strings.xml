@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Word Learner</string>
+    <string name="todo">TODO</string>
+
+    <string name="rateapp_link">https://play.google.com/store/apps/details?id=</string>
+    <string name="moreapps_link">https://play.google.com/store/apps/developer?id=Ok+Codex</string>
+    <string name="feedback_email_link">teamokcodex@gmail.com</string>
+    <string name="send_mail">Send Email</string>
+    <string name="advertisement">Advertisement</string>
+
+    <string name="congrats">Congrats!</string>
 </resources>

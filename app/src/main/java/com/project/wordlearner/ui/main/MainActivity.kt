@@ -1,10 +1,12 @@
-package com.project.wordlearner
+package com.project.wordlearner.ui.main
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.GsonBuilder
+import com.project.wordlearner.R
+import com.project.wordlearner.data.models.Data
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
