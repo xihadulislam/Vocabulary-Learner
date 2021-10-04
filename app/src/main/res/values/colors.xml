@@ -1,10 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="colorPrimary">#58419C</color>
+    <color name="colorPrimaryLight">#6D55B3</color>
+    <color name="colorPrimaryDark">#4B3787</color>
+    <color name="colorAccent">#F9D67A</color>
+    <color name="colorSecondary">#F16206</color>
+    <color name="colorGlass">#F2F1ED</color>
+    <color name="colorRedLight">#FFF7F5</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_deep">#F4F4F4</color>
+
+
+    <color name="black">#212121</color>
+    <color name="trans">#70000000</color>
+    <color name="bg_rank_item">#F3ECD8</color>
+    <color name="bg_text_color">#4D4D4D</color>
+    <color name="rank_item_color">#F5FBEE</color>
+
+    <color name="red_active">#f44336</color>
+    <color name="purple_active">#9c27b0</color>
+    <color name="blue_active">#03a9f4</color>
+    <color name="green_active">#4caf50</color>
+    <color name="blue_grey_active">#607d8b</color>
+    <color name="yellow_active">#ffeb3b</color>
+    <color name="orange_active">#ff9800</color>
+    <color name="grey_active">#9e9e9e</color>
+
+    <color name="red_inactive">#e57373</color>
+    <color name="purple_inactive">#ba68c8</color>
+    <color name="blue_inactive">#64b5f6</color>
+    <color name="green_inactive">#81c784</color>
+    <color name="blue_grey_inactive">#90a4ae</color>
+    <color name="yellow_inactive">#fff176</color>
+    <color name="orange_inactive">#ffb74d</color>
+    <color name="gery_inactive">#e0e0e0</color>
+
+    <color name="default_inactive">#78909c</color>
+
+    <color name="red_bg_light">#ffebee</color>
+    <color name="purple_bg_light">#f3e5f5</color>
+    <color name="blue_bg_light">#e3f2fd</color>
+    <color name="green_bg_light">#e8f5e9</color>
+    <color name="blue_grey_bg_light">#eceff1</color>
+    <color name="yellow_bg_light">#fffde7</color>
+    <color name="orange_bg_light">#fff3e0</color>
+    <color name="grey_bg_light">#fafafa</color>
+    <color name="colorPrimary_light">#45DAB5</color>
+
+
+    <color name="colorToolbar">#00B468</color>
+    <color name="colorHomeCoinBG">#013536</color>
+    <color name="colorHomeUserDetailsBG">#7EE0B7</color>
+    <color name="colorItemBG">#DFFAEF</color>
+    <color name="colorRunningState">#FF0000</color>
+    <color name="colorUpcomingState">#3EC143</color>
+
+    <integer-array name="gplus_colors">
+        <item>@color/gplus_color_1</item>
+        <item>@color/gplus_color_2</item>
+        <item>@color/gplus_color_3</item>
+        <item>@color/gplus_color_4</item>
+    </integer-array>
+
+    <color name="gplus_color_1">#3e802f</color>
+    <color name="gplus_color_2">#f4b400</color>
+    <color name="gplus_color_3">#427fed</color>
+    <color name="gplus_color_4">#b23424</color>
+
+    <color name="grey_10">#FCFBFF</color>
+    <color name="stat_card_backcolor">#DFFAEF</color>
+    <color name="marks_color">#50C5FA</color>
+    <color name="right_color">#66BB6A</color>
+    <color name="wrong_color">#EF5350</color>
+    <color name="notans_color">#78909C</color>
+    <color name="section_bg">#DFFAEF</color>
+
+    <color name="textColor">#635A5A</color>
+
+    <color name="btn_normal">#FFFFFF</color>
+    <color name="btn_pressed">#1A000000</color>
+
+    <color name="tab_indicator_grey">#c0c0c0</color>
+    <color name="gradient_start_color">#FF4C4C</color>
+    <color name="gradient_end_color">#FE1818</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
+
+    <color name="share_color">#615858</color>
+    <color name="bottom_color">#616161</color>
+
+
+    <color name="fb_color">#4E82EA</color>
+    <color name="fb_color_pressed">#3E71D8</color>
+    <color name="google_color">#D15235</color>
+    <color name="google_color_pressed">#BD4616</color>
+    <color name="guest_color">#F9FBF9</color>
+    <color name="guest_color_pressed">#B8EDC2</color>
+    <color name="guest_border_color">#0AB827</color>
+
+    <color name="wp_color">#0B7A1E</color>
+    <color name="twitter_color">#1BA5D4</color>
+
+
+    <color name="head_to_head_color">#A3F1EA</color>
+    <color name="lose_red_bg">#F16968</color>
+    <color name="lose__red_bg">#e94f4f</color>
+    <color name="win_pest_bg">#eebd22</color>
+    <color name="win_pest_bg2">#897AEC</color>
+    <color name="answer_sheet_answer_bg">#E07000</color>
+    <color name="answer_sheet_view_bg">#FABE78</color>
+
+    <color name="question_view_bg">#8D7EF2</color>
+
+
+    <color name="settings_color">#5DBD5D</color>
+    <color name="rank_color">#5DBD5D</color>
+    <color name="user_rank_color">#95B9F6</color>
+    <color name="rank_toggle">#3E60D1</color>
+    <color name="categories_color">#5DBD5D</color>
+    <color name="cat_color">#009688</color>
+    <color name="home_color">#5DBD5D</color>
+
+
+    <color name="categories_progress_bar_blue">#E3ECFF</color>
+    <color name="categories_progress_bar_green">#EBFAEE</color>
+    <color name="categories_progress_bar_orange">#FCF5D5</color>
+    <color name="categories_progress_bar_pink">#F1BEDB</color>
+    <color name="categories_progress_bar_red">#FFD1DA</color>
+    <color name="categories_progress_bar_violet">#F6E6FF</color>
+    <color name="categories_progress_bar_yellow">#F3E5BC</color>
+
+
+    <color name="quiz_play_status_color">#91E491</color>
+
+    <color name="quiz_play_preparation_status_color">#A3EAA3</color>
+    <color name="quiz_result_status_color">#7767E1</color>
+
+    <color name="headToHead">#7767E1</color>
+    <color name="headToHead_medium">#8576E4</color>
+    <color name="headToHead_deep">#5E4FC3</color>
+    <color name="headToHead_light">#E8E6FC</color>
+
+    <color name="content_lose_bg">#e94f4f</color>
+
+
+    <color name="preparation_text">#F3F8F3</color>
+
+
 </resources>

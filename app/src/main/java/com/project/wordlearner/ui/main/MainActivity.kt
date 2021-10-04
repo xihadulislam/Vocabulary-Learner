@@ -1,56 +1,35 @@
 package com.project.wordlearner.ui.main
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.google.gson.GsonBuilder
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.project.wordlearner.R
-import com.project.wordlearner.data.models.Data
-import java.io.IOException
+import com.project.wordlearner.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    companion object {
-        private const val TAG = "MainActivity"
-    }
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        getData()
+        val navView: BottomNavigationView = binding.navView
 
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_game,R.id.navigation_profile
+            )
+        )
+        // setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
-
-    private fun getData() {
-        val agentsJsonFileString = getJsonDataFromAsset(applicationContext, "data.json")
-        val list = getQuestionsListFromJsonString(agentsJsonFileString).toMutableList()
-        Log.d("jjj", "getData: ${list.size}")
-        Log.d("jjj", "getData: "+list[2].bn)
-        Log.d("jjj", "getData: "+list[2].en)
-        Log.d("jjj", "getData: "+list[2].pron)
-    }
-
-    private fun getQuestionsListFromJsonString(json: String?): List<Data> {
-        return GsonBuilder().create().fromJson(json, Array<Data>::class.java).toList()
-    }
-
-    private fun getJsonDataFromAsset(context: Context, fileName: String): String? {
-        val jsonString: String
-        try {
-            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
-            Log.d(TAG, "getJsonDataFromAsset: $jsonString")
-        } catch (ioException: IOException) {
-            Log.e(TAG, "getJsonDataFromAsset: ", ioException)
-            ioException.printStackTrace()
-            return null
-        }
-        return jsonString
-    }
-
-
 }
-
-

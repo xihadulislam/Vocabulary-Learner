@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.Log
 import com.google.gson.GsonBuilder
+import com.project.wordlearner.data.models.Data
 import java.io.IOException
 
 private const val TAG = "Utils"
