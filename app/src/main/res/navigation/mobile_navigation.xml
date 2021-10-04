@@ -21,7 +21,7 @@
         android:id="@+id/navigation_game"
         android:name="com.project.wordlearner.ui.game.GameFragment"
         android:label="@string/title_game"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_game" />
 
     <fragment
         android:id="@+id/navigation_profile"
