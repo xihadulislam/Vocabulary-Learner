@@ -4,9 +4,10 @@
 
     <color name="colorPrimary">#58419C</color>
     <color name="colorPrimaryLight">#6D55B3</color>
+    <color name="colorPrimaryLight_white">#F3F0FB</color>
     <color name="colorPrimaryDark">#4B3787</color>
     <color name="colorAccent">#F9D67A</color>
-    <color name="colorSecondary">#F16206</color>
+    <color name="colorSecondary">#EF833E</color>
     <color name="colorGlass">#F2F1ED</color>
     <color name="colorRedLight">#FFF7F5</color>
 

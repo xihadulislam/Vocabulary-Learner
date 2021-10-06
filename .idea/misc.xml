@@ -8,20 +8,26 @@
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_card_game.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_category_icon.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_dual_quiz_question.xml" value="0.37083333333333335" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_grey_card_normal.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_logout_card_normal.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_preparation_screen.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_rank_postion.xml" value="0.37083333333333335" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_result_point_card_normal.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_w_card.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_w_card_grey.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_white_card_dashboard.xml" value="0.36512820512820515" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.36512820512820515" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/ic_lock.xml" value="0.37083333333333335" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/week_card_bg.xml" value="0.37083333333333335" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/week_card_bg_active.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/activity_splash.xml" value="0.340625" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/fragment_game.xml" value="0.22" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/fragment_home.xml" value="0.3546875" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/item_category.xml" value="0.33" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/item_home_card.xml" value="0.33" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/profile_fragment.xml" value="0.25" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3546875" />
       </map>
     </option>
