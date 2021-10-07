@@ -17,7 +17,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue_grey_inactive"
+            android:background="@color/colorPrimary"
             android:padding="12dp">
 
             <TextView
@@ -268,7 +268,7 @@
                     android:background="@drawable/bg_logout_card_normal"
                     android:gravity="center"
                     android:padding="12dp"
-                    android:text="keep it"
+                    android:text="Notify me"
                     android:textColor="@color/white"
                     android:textSize="16sp">
 
@@ -299,7 +299,7 @@
                     android:background="@drawable/bg_result_point_card_normal"
                     android:gravity="center"
                     android:padding="12dp"
-                    android:text="i know"
+                    android:text="I know"
                     android:textColor="@color/white"
                     android:textSize="16sp">
 

@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable-v24/bg_card_dashboard.xml" value="0.36512820512820515" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_card_dashboard.xml" value="0.36512820512820515" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_card_dashboard_cor.xml" value="0.3651041666666667" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_card_game.xml" value="0.37083333333333335" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_carve_round_.xml" value="0.3651041666666667" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_category_icon.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_dual_quiz_question.xml" value="0.37083333333333335" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/drawable/bg_grey_card_normal.xml" value="0.37083333333333335" />
@@ -28,6 +30,7 @@
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/item_category.xml" value="0.33" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/item_home_card.xml" value="0.33" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/profile_fragment.xml" value="0.25" />
+        <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/layout/search_fragment.xml" value="0.25" />
         <entry key="..\:/Ok Codex/Git-Clone/word-learner/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3546875" />
       </map>
     </option>

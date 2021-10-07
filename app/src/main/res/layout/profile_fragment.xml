@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight_white"
     tools:context=".ui.profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -209,7 +210,6 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
@@ -240,7 +240,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="MON"
-                        android:textSize="12sp">
+                        android:textSize="10sp">
 
                     </TextView>
 
@@ -276,7 +276,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="MON"
-                        android:textSize="12sp">
+                        android:textSize="10sp">
 
                     </TextView>
 
@@ -313,7 +313,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="MON"
-                        android:textSize="12sp">
+                        android:textSize="10sp">
 
                     </TextView>
 
@@ -350,7 +350,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="MON"
-                        android:textSize="12sp">
+                        android:textSize="10sp">
 
                     </TextView>
 
@@ -387,7 +387,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="MON"
-                        android:textSize="12sp">
+                        android:textSize="10sp">
 
                     </TextView>
 
@@ -424,7 +424,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="MON"
-                        android:textSize="12sp">
+                        android:textSize="10sp">
 
                     </TextView>
 
@@ -461,7 +461,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="MON"
-                        android:textSize="12sp">
+                        android:textSize="10sp">
 
                     </TextView>
 
