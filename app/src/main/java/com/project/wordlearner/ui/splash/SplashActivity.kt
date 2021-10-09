@@ -7,9 +7,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import androidx.lifecycle.ViewModelProvider
 import com.google.gson.GsonBuilder
 import com.project.wordlearner.R
+import com.project.wordlearner.data.db.AppDatabase
 import com.project.wordlearner.data.models.Data
+import com.project.wordlearner.data.preference.AppSharedPref
+import com.project.wordlearner.data.repositories.DataRepo
+import com.project.wordlearner.ui.dashboard.DashboardViewModel
 import com.project.wordlearner.ui.main.MainActivity
 import java.io.IOException
 
@@ -19,15 +24,31 @@ class SplashActivity : AppCompatActivity() {
         private const val TAG = "SplashActivity"
     }
 
+    private lateinit var appSharedPref: AppSharedPref
+    private lateinit var appDatabase: AppDatabase
+    private lateinit var dataRepo: DataRepo
+    private lateinit var factory: SplashViewModelFactory
+    private lateinit var viewModel: SplashViewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+
+        appSharedPref = AppSharedPref(this)
+        appDatabase = AppDatabase.getAppDataBase(this)!!
+        dataRepo = DataRepo(appDatabase)
+        factory = SplashViewModelFactory(dataRepo)
+        viewModel = ViewModelProvider(this, factory).get(SplashViewModel::class.java)
+
+
         getData()
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 5500)
+        }, 1000)
     }
 
 
@@ -35,9 +56,8 @@ class SplashActivity : AppCompatActivity() {
         val agentsJsonFileString = getJsonDataFromAsset(applicationContext, "data.json")
         val list = getQuestionsListFromJsonString(agentsJsonFileString).toMutableList()
         Log.d("jjj", "getData: ${list.size}")
-        Log.d("jjj", "getData: " + list[2].bn)
-        Log.d("jjj", "getData: " + list[2].en)
-        Log.d("jjj", "getData: " + list[2].pron)
+
+        viewModel.storeQBFromLocal(list)
     }
 
     private fun getQuestionsListFromJsonString(json: String?): List<Data> {

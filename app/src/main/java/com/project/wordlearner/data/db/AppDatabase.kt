@@ -5,15 +5,20 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.project.wordlearner.data.db.dao.QuestionDAO
-import com.project.wordlearner.data.models.Question
+import com.project.wordlearner.data.db.converter.IntListConverter
+import com.project.wordlearner.data.db.converter.StringListConverter
+import com.project.wordlearner.data.db.dao.DataDAO
+import com.project.wordlearner.data.models.Data
 
-@Database(entities = [Question::class], version = 1)
+@Database(entities = [Data::class], version = 1)
 
-@TypeConverters()
+@TypeConverters(
+    StringListConverter::class,
+    IntListConverter::class
+)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun questionDAO(): QuestionDAO
+    abstract fun questionDAO(): DataDAO
 
     companion object {
         var INSTANCE: AppDatabase? = null
