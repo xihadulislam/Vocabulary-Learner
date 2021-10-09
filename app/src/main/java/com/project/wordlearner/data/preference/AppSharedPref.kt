@@ -28,6 +28,32 @@ class AppSharedPref(context: Context) {
     }
 
 
+    fun setTodayWordList(value: String) {
+        kpSettings.setStringValue(AppConstants.TODAY_WORD_LIST, value)
+    }
+
+    fun getTodayWordList(): String {
+        return kpSettings.getStringValue(AppConstants.TODAY_WORD_LIST, "[]")
+    }
+
+    fun setWord(value: String) {
+        kpSettings.setStringValue(AppConstants.WORD, value)
+    }
+
+    fun getWord(): String {
+        return kpSettings.getStringValue(AppConstants.WORD, "")
+    }
+
+
+    fun setTodayDate(value: String) {
+        kpSettings.setStringValue(AppConstants.TODAY_DATE, value)
+    }
+
+    fun getTodayDate(): String {
+        return kpSettings.getStringValue(AppConstants.TODAY_DATE, "")
+    }
+
+
     companion object {
         private var appSharedPref: AppSharedPref? = null
         fun getInstance(context: Context): AppSharedPref? {

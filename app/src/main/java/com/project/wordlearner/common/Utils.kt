@@ -1,20 +1,23 @@
-
 package com.project.wordlearner.common
 
 import android.content.Context
+import android.icu.text.SimpleDateFormat
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.Log
+import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import com.google.gson.GsonBuilder
-import com.project.wordlearner.data.models.Data
+import com.project.wordlearner.data.models.Word
 import java.io.IOException
+import java.util.*
 
 private const val TAG = "Utils"
 
 
-fun getQuestionsListFromJsonString(json: String?): List<Data> {
-    return GsonBuilder().create().fromJson(json, Array<Data>::class.java).toList()
+fun getQuestionsListFromJsonString(json: String?): List<Word> {
+    return GsonBuilder().create().fromJson(json, Array<Word>::class.java).toList()
 }
 
 fun getJsonDataFromAsset(context: Context, fileName: String): String? {
@@ -62,3 +65,16 @@ fun isInternetAvailable(context: Context): Boolean {
 }
 
 
+fun String.capitalizeWords() = split(' ').joinToString(" ", transform = String::capitalize)
+
+
+fun TextView.setHtmlText(string: String?) {
+    text = HtmlCompat.fromHtml(string ?: "", HtmlCompat.FROM_HTML_MODE_COMPACT)
+}
+
+
+fun getToday(): String {
+    val c = Calendar.getInstance().time
+    val df = java.text.SimpleDateFormat("yyyy_MM_dd", Locale.US)
+    return df.format(c)
+}

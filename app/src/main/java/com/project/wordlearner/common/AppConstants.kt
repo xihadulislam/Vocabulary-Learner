@@ -16,6 +16,9 @@ class AppConstants {
         const val admob_test_rewarded_ad_id = "ca-app-pub-3940256099942544/5224354917"
 
 
+        const val TODAY_WORD_LIST = "TodayWordList"
+        const val WORD = "Word_"
+        const val TODAY_DATE = "TodayDate"
 
         const val DB_UPDATE_NEEDED = "DbUpdateNeeded"
         const val ID = "ID"

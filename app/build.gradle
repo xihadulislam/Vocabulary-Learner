@@ -16,7 +16,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -82,5 +82,7 @@ dependencies {
     // StackLayoutManager
     implementation 'com.littlemango:stacklayoutmanager:1.0.5'
 
+    // xihad islam
+    implementation 'com.github.xihadulislam:androidUtils:1.0.5'
 
 }

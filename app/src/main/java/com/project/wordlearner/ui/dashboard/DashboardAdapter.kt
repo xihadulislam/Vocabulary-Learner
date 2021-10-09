@@ -4,10 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.project.wordlearner.R
-import com.project.wordlearner.data.models.Data
 
 class DashboardAdapter(val context: Context) :
     RecyclerView.Adapter<DashboardAdapter.MyViewHolder>() {

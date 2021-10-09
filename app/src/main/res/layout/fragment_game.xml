@@ -48,7 +48,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tvMainText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hey xihad ! "
@@ -68,8 +68,8 @@
                     android:alpha="0.8"
                     android:text="Let's Plan your Monday ? "
                     android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="@+id/textView3"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3">
+                    app:layout_constraintStart_toStartOf="@+id/tvMainText"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMainText">
 
                 </TextView>
 

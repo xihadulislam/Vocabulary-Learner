@@ -11,10 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.gson.GsonBuilder
 import com.project.wordlearner.R
 import com.project.wordlearner.data.db.AppDatabase
-import com.project.wordlearner.data.models.Data
+import com.project.wordlearner.data.models.Word
 import com.project.wordlearner.data.preference.AppSharedPref
-import com.project.wordlearner.data.repositories.DataRepo
-import com.project.wordlearner.ui.dashboard.DashboardViewModel
+import com.project.wordlearner.data.repositories.WordRepo
 import com.project.wordlearner.ui.main.MainActivity
 import java.io.IOException
 
@@ -26,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
     private lateinit var appSharedPref: AppSharedPref
     private lateinit var appDatabase: AppDatabase
-    private lateinit var dataRepo: DataRepo
+    private lateinit var wordRepo: WordRepo
     private lateinit var factory: SplashViewModelFactory
     private lateinit var viewModel: SplashViewModel
 
@@ -38,17 +37,19 @@ class SplashActivity : AppCompatActivity() {
 
         appSharedPref = AppSharedPref(this)
         appDatabase = AppDatabase.getAppDataBase(this)!!
-        dataRepo = DataRepo(appDatabase)
-        factory = SplashViewModelFactory(dataRepo)
+        wordRepo = WordRepo(appDatabase)
+        factory = SplashViewModelFactory(wordRepo, appSharedPref)
         viewModel = ViewModelProvider(this, factory).get(SplashViewModel::class.java)
 
 
-        getData()
+        viewModel.getTodayWords()
+
+        // getData()
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 1000)
+        }, 2000)
     }
 
 
@@ -60,8 +61,8 @@ class SplashActivity : AppCompatActivity() {
         viewModel.storeQBFromLocal(list)
     }
 
-    private fun getQuestionsListFromJsonString(json: String?): List<Data> {
-        return GsonBuilder().create().fromJson(json, Array<Data>::class.java).toList()
+    private fun getQuestionsListFromJsonString(json: String?): List<Word> {
+        return GsonBuilder().create().fromJson(json, Array<Word>::class.java).toList()
     }
 
     private fun getJsonDataFromAsset(context: Context, fileName: String): String? {
