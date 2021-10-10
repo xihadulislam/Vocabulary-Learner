@@ -2,7 +2,6 @@ package com.project.wordlearner.ui.home
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.project.wordlearner.R
+import com.project.wordlearner.common.AppConstants.Companion.I_KNOW
+import com.project.wordlearner.common.AppConstants.Companion.LEARNING
+import com.project.wordlearner.common.AppConstants.Companion.NOTIFY_ME
 import com.project.wordlearner.common.capitalizeWords
 import com.project.wordlearner.common.setHtmlText
 import com.project.wordlearner.data.models.Word
@@ -104,19 +106,19 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
             }
             imClose.setOnClickListener { listener?.onCloseClick(word, adapterPosition) }
 
-            tvKnow.setOnClickListener { listener?.onActionClick(word, WordSate.I_KNOW.toString()) }
+            tvKnow.setOnClickListener { listener?.onActionClick(word, I_KNOW) }
 
             tvLearning.setOnClickListener {
                 listener?.onActionClick(
                     word,
-                    WordSate.LEARNING.toString()
+                    LEARNING
                 )
             }
 
             tvNotify.setOnClickListener {
                 listener?.onActionClick(
                     word,
-                    WordSate.NOTIFY_ME.toString()
+                    NOTIFY_ME
                 )
             }
 

@@ -59,6 +59,21 @@
 
             </ImageView>
 
+
+            <ImageView
+                android:id="@+id/imShare"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@+id/imBookmark"
+                app:layout_constraintEnd_toStartOf="@+id/imBookmark"
+                app:layout_constraintTop_toTopOf="@+id/imBookmark"
+                app:tint="@color/white">
+
+            </ImageView>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

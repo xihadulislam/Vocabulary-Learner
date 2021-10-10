@@ -6,8 +6,12 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.gson.GsonBuilder
 import com.project.wordlearner.data.models.Word
 import java.io.IOException
@@ -78,3 +82,23 @@ fun getToday(): String {
     val df = java.text.SimpleDateFormat("yyyy_MM_dd", Locale.US)
     return df.format(c)
 }
+
+
+fun View.showKeyboard(
+) {
+    requestFocus()
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
+            InputMethodManager
+    imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+}
+
+fun View.hideKeyboard(
+) {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
+            InputMethodManager
+    imm.hideSoftInputFromWindow(this.windowToken, 0)
+}
+
+fun View.isKeyboardVisible(): Boolean = ViewCompat.getRootWindowInsets(this)
+    ?.isVisible(WindowInsetsCompat.Type.ime())
+    ?: false

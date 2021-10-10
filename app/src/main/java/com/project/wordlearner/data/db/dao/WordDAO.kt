@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import com.project.wordlearner.data.models.Word
 
+
 @Dao
 interface WordDAO : BaseDAO<Word> {
 
@@ -24,6 +25,14 @@ interface WordDAO : BaseDAO<Word> {
 
     @Query("select id from word  ")
     fun getWordId(): List<Long>
+
+
+    @Query("SELECT * FROM word WHERE pron LIKE :search OR en LIKE :search ")
+    fun search(search: String): List<Word>
+
+    // @Query("SELECT * FROM word WHERE pron LIKE '%' || :param || '%'  OR  en LIKE '%' || :param || '%'  Limit 20")
+    @Query("SELECT * FROM word WHERE en LIKE:param or  en LIKE  :param || '%'  Limit 20")
+    fun searchIt(param: String?): List<Word>
 
 
 }

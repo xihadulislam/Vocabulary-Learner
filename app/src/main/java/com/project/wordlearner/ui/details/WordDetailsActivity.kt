@@ -1,25 +1,18 @@
 package com.project.wordlearner.ui.details
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
-import com.littlemango.stacklayoutmanager.DefaultAnimation
-import com.littlemango.stacklayoutmanager.StackLayoutManager
 import com.project.wordlearner.R
 import com.project.wordlearner.common.capitalizeWords
-import com.project.wordlearner.common.setHtmlText
 import com.project.wordlearner.data.models.Word
 import com.project.wordlearner.data.preference.AppSharedPref
-import com.project.wordlearner.ui.home.HomeAdapter
-import com.project.wordlearner.ui.home.HomeFragment
-import com.project.wordlearner.ui.home.WordSate
 
 class WordDetailsActivity : AppCompatActivity() {
 

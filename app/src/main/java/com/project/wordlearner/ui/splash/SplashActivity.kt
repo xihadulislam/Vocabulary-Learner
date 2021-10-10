@@ -8,10 +8,12 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.project.wordlearner.R
 import com.project.wordlearner.data.db.AppDatabase
 import com.project.wordlearner.data.models.Word
+import com.project.wordlearner.data.models.WordDemo
 import com.project.wordlearner.data.preference.AppSharedPref
 import com.project.wordlearner.data.repositories.WordRepo
 import com.project.wordlearner.ui.main.MainActivity
@@ -42,9 +44,9 @@ class SplashActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, factory).get(SplashViewModel::class.java)
 
 
-        viewModel.getTodayWords()
+       viewModel.getTodayWords()
 
-        // getData()
+       // getData()
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
@@ -58,11 +60,13 @@ class SplashActivity : AppCompatActivity() {
         val list = getQuestionsListFromJsonString(agentsJsonFileString).toMutableList()
         Log.d("jjj", "getData: ${list.size}")
 
-        viewModel.storeQBFromLocal(list)
+        Log.d(TAG, "getData: "+Gson().toJson(list[0]))
+
+       viewModel.storeQBFromLocal(list)
     }
 
-    private fun getQuestionsListFromJsonString(json: String?): List<Word> {
-        return GsonBuilder().create().fromJson(json, Array<Word>::class.java).toList()
+    private fun getQuestionsListFromJsonString(json: String?): List<WordDemo> {
+        return GsonBuilder().create().fromJson(json, Array<WordDemo>::class.java).toList()
     }
 
     private fun getJsonDataFromAsset(context: Context, fileName: String): String? {

@@ -18,9 +18,15 @@ class WordRepo(private val appDatabase: AppDatabase) {
         return questionDAO.insert(math)
     }
 
+
     fun getWords(): LiveData<List<Word>> {
         return appDatabase.wordDAO().getWords()
     }
+
+    fun getSearchResult(string: String): List<Word> {
+        return appDatabase.wordDAO().searchIt(string)
+    }
+
 
     fun getWords(page: Int, limit: Int): LiveData<List<Word>> {
         return appDatabase.wordDAO().getWordListByLimit()

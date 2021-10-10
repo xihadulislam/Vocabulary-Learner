@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.project.wordlearner.common.getToday
 import com.project.wordlearner.data.models.Word
+import com.project.wordlearner.data.models.WordDemo
 import com.project.wordlearner.data.preference.AppSharedPref
 import com.project.wordlearner.data.repositories.WordRepo
 import kotlinx.coroutines.Dispatchers
@@ -23,17 +24,19 @@ class SplashViewModel(
                 appSharedPref.setTodayWordList(Gson().toJson(wordRepo.getTodayWords()))
                 appSharedPref.setTodayDate(getToday())
 
-                Log.d(TAG, "getTodayWords: "+ getToday())
-            }else{
+                Log.d(TAG, "getTodayWords: " + getToday())
+            } else {
                 Log.d(TAG, "getTodayWords: call")
             }
         }
     }
 
 
-    fun storeQBFromLocal(list: MutableList<Word>) {
+    fun storeQBFromLocal(list: MutableList<WordDemo>) {
         viewModelScope.launch(Dispatchers.IO) {
 
+
+            list.shuffle()
 
             val newList = mutableListOf<Word>()
             list.forEach { word ->
@@ -49,13 +52,18 @@ class SplashViewModel(
 
                 if (word.en.equals(word.bn, true)) flg = true
 
-
                 if (word.bn_synonyms.isEmpty() && word.en_synonyms.isEmpty()) flg = true
 
-
-
                 if (!flg) {
-                    newList.add(word)
+                    val w = Word(
+                        word.pron,
+                        word.bn,
+                        word.en,
+                        word.bn_synonyms,
+                        word.en_synonyms,
+                        word.sentences
+                    )
+                    newList.add(w)
                 }
 
             }
