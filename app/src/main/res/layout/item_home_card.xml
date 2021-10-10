@@ -79,16 +79,16 @@
                 android:textColor="@color/colorSecondary"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/imSpeak"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
             </TextView>
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:id="@+id/imSpeak"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:layout_marginEnd="16dp"
                 android:padding="8dp"
                 android:src="@drawable/ic_speaker"

@@ -69,6 +69,7 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
 
         var imBookmark: ImageView = itemView.findViewById(R.id.imBookmark)
         var imClose: ImageView = itemView.findViewById(R.id.imClose)
+        var imSpeak: ImageView = itemView.findViewById(R.id.imSpeak)
 
         var innerRoot: LinearLayout = itemView.findViewById(R.id.innerRoot)
 
@@ -119,11 +120,17 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
                 )
             }
 
+            imSpeak.setOnClickListener {
+                listener?.onSpeakClick(
+                    word
+                )
+            }
+
 
         }
 
 
-        fun bindBookmarkIcon(context: Context, word: Word) {
+        private fun bindBookmarkIcon(context: Context, word: Word) {
 
             if (word.isFav) {
                 imBookmark.setImageDrawable(
@@ -150,6 +157,7 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
     interface HomeListener {
 
         fun onItemClick(word: Word)
+        fun onSpeakClick(word: Word)
         fun onBookmarkClick(word: Word, position: Int)
         fun onCloseClick(word: Word, position: Int)
         fun onActionClick(word: Word, type: String)
