@@ -44,6 +44,7 @@
                 android:layout_height="300dp"
                 android:layout_margin="40dp"
                 android:alpha="0.3"
+                android:scaleType="fitStart"
                 android:src="@drawable/ic_illustration_doodle_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -53,12 +54,14 @@
 
             </ImageView>
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contInfoLayout"
                 android:layout_width="match_parent"
                 android:layout_height="440dp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -210,7 +213,6 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <TextView
                 android:id="@+id/tvHelper"

@@ -1,24 +1,15 @@
 package com.project.wordlearner.ui.dashboard
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.littlemango.stacklayoutmanager.DefaultAnimation
-import com.littlemango.stacklayoutmanager.StackLayoutManager
 import com.project.wordlearner.R
-import com.project.wordlearner.databinding.FragmentDashboardBinding
-import com.project.wordlearner.ui.home.HomeAdapter
-import com.project.wordlearner.ui.home.HomeFragment
-import com.project.wordlearner.ui.home.HomeViewModel
 
 class DashboardFragment : Fragment() {
 
@@ -55,8 +46,6 @@ class DashboardFragment : Fragment() {
         }
 
         val list = mutableListOf<String>()
-        list.add("trtertre")
-        list.add("trtertre")
         list.add("trtertre")
         list.add("trtertre")
         list.add("trtertre")

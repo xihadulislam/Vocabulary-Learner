@@ -21,6 +21,7 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:visibility="gone"
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
@@ -73,12 +74,12 @@
                 android:id="@+id/dashboardList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:padding="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                tools:listitem="@layout/item_category">
+                tools:listitem="@layout/item_explore">
 
             </androidx.recyclerview.widget.RecyclerView>
 
