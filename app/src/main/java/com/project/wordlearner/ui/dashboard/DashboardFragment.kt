@@ -13,8 +13,10 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.project.wordlearner.R
+import com.project.wordlearner.data.Data.Companion.getDashboards
+import com.project.wordlearner.data.models.Dashboard
+import java.lang.Math.abs
 import java.util.*
-import kotlin.math.abs
 
 class DashboardFragment : Fragment() {
 
@@ -68,7 +70,7 @@ class DashboardFragment : Fragment() {
         tabLayout = view.findViewById(R.id.tabIndicatorId)
 
 
-        sliderAdapter = CategorySliderAdapter()
+        sliderAdapter = CategorySliderAdapter(requireContext())
         viewPager.adapter = sliderAdapter
         viewPager.clipToPadding = false
         viewPager.clipChildren = false
@@ -92,8 +94,8 @@ class DashboardFragment : Fragment() {
                 }
             }
         }
-        timer = Timer()
-        timer?.schedule(timerTask, 6000, 6000)
+      //  timer = Timer()
+      //  timer?.schedule(timerTask, 6000, 6000)
 
 
         val list = mutableListOf<String>()
@@ -102,11 +104,11 @@ class DashboardFragment : Fragment() {
         list.add("trtertre")
         list.add("trtertre")
 
-        setUpNewsSlider(list)
+        setUpNewsSlider(getDashboards())
 
     }
 
-    private fun setUpNewsSlider(sliderList: List<String>) {
+    private fun setUpNewsSlider(sliderList: List<Dashboard>) {
         sliderAdapter.setNewList(sliderList)
         TabLayoutMediator(tabLayout, viewPager) { tab, _ ->
             viewPager.currentItem = tab.position

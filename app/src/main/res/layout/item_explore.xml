@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_explore"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_card_explore_1">
+    android:background="@drawable/bg_card_explore_3">
 
 
     <ImageView
@@ -68,9 +69,10 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_inside"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/bg_card_explore_1_inside"
+        android:background="@drawable/bg_card_explore_3_inside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -132,7 +134,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="32dp"
             android:progress="50"
-            android:progressDrawable="@drawable/categories_progress_bar_blue"
+            android:progressDrawable="@drawable/progress_bar_blue"
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
             app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
             app:layout_constraintStart_toStartOf="@+id/textView6"

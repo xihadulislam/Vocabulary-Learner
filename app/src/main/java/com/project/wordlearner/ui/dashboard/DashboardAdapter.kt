@@ -4,15 +4,18 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.project.wordlearner.R
+import com.project.wordlearner.data.models.Dashboard
 
 class DashboardAdapter(val context: Context) :
     RecyclerView.Adapter<DashboardAdapter.MyViewHolder>() {
 
-    private var mList: MutableList<String> = mutableListOf()
+    private var mList: MutableList<Dashboard> = mutableListOf()
 
-    fun setUpdatedList(list: List<String>) {
+    fun setUpdatedList(list: List<Dashboard>) {
         mList.clear()
         mList.addAll(list)
         notifyDataSetChanged()
@@ -37,7 +40,15 @@ class DashboardAdapter(val context: Context) :
     class MyViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
 
-        fun bindView(faq: String, context: Context) {
+        var card_explore: ConstraintLayout = itemView.findViewById(R.id.card_explore)
+        var card_inside: ConstraintLayout = itemView.findViewById(R.id.card_inside)
+
+
+        fun bindView(dashboard: Dashboard, context: Context) {
+
+            card_explore.background = ContextCompat.getDrawable(context, dashboard.bg)
+            card_inside.background = ContextCompat.getDrawable(context, dashboard.bg_inside)
+
 
         }
 
