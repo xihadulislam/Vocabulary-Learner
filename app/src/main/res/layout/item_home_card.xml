@@ -280,7 +280,8 @@
                         android:letterSpacing="0.03"
                         android:lineHeight="20sp"
                         android:padding="12dp"
-                        android:text="The living room was carpeted in pink and 2 beige sofas with blue pillows lined the corner."
+                        android:text="N/A"
+                        android:minHeight="60dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView11">

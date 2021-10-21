@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
+import com.project.wordlearner.common.AppConstants
 import com.project.wordlearner.data.models.Word
 import com.project.wordlearner.data.preference.AppSharedPref
 import com.project.wordlearner.data.repositories.WordRepo
@@ -39,5 +40,32 @@ class HomeViewModel(
             appSharedPref.setTodayWordList(Gson().toJson(list))
         }
     }
+
+    fun stageUpdate(word: Word, type: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            word.stage = type
+            wordRepo.updateWord(word)
+            val list = Gson().fromJson(appSharedPref.getTodayWordList(), Array<Word>::class.java)
+                .toMutableList()
+
+            var seletcted :Word? = null
+
+            list.forEach {
+                if (it.id == word.id) {
+                    if (word.stage.equals(AppConstants.I_KNOW, true)) {
+                        seletcted = it
+                    } else {
+                        it.stage = word.stage
+                    }
+                }
+            }
+            seletcted?.let {
+                list.remove(it)
+            }
+
+            appSharedPref.setTodayWordList(Gson().toJson(list))
+        }
+    }
+
 
 }

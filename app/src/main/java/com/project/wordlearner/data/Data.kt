@@ -13,19 +13,8 @@ class Data {
             val list: MutableList<Dashboard> = mutableListOf()
 
 
-            val dashboard = Dashboard(
-                "Conversation \nIn-depth",
-                "learn english conversation a to z ",
-                1,
-                R.drawable.bg_card_explore_1,
-                R.drawable.bg_card_explore_1_inside,
-                R.drawable.progress_bar_blue,
-                60.0,
-                25
-            )
-
             val dashboard2 = Dashboard(
-                "Conversation \nIn-depth",
+                "Daily word\nlearning",
                 "learn english conversation a to z ",
                 2,
                 R.drawable.bg_card_explore_3,
@@ -35,8 +24,19 @@ class Data {
                 25
             )
 
+            val dashboard = Dashboard(
+                "Phrases and idioms",
+                "learn english conversation a to z ",
+                1,
+                R.drawable.bg_card_explore_1,
+                R.drawable.bg_card_explore_1_inside,
+                R.drawable.progress_bar_blue,
+                60.0,
+                25
+            )
+
             val dashboard3 = Dashboard(
-                "Conversation \nIn-depth",
+                "Most used \nSentences",
                 "learn english conversation a to z ",
                 3,
                 R.drawable.bg_card_explore_2,
@@ -59,8 +59,8 @@ class Data {
 
 
 
-            list.add(dashboard)
             list.add(dashboard2)
+            list.add(dashboard)
             list.add(dashboard3)
             list.add(dashboard4)
 

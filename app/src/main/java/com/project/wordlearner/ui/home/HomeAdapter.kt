@@ -41,7 +41,7 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bindView(context, mList[position], listener)
+        holder.bindView(context, mList[position], listener, mList.size)
     }
 
     override fun getItemCount(): Int {
@@ -49,9 +49,16 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
     }
 
 
-    fun bookMarkUpdate(position: Int) {
-        mList[position].isFav = !mList[position].isFav
-        notifyItemChanged(position)
+    @SuppressLint("NotifyDataSetChanged")
+    fun deleteITem(position: Int) {
+
+        if (position<mList.size){
+            mList.removeAt(position)
+            notifyItemRangeChanged(position, mList.size)
+        }else{
+            notifyDataSetChanged()
+        }
+
     }
 
 
@@ -76,9 +83,9 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
         var innerRoot: LinearLayout = itemView.findViewById(R.id.innerRoot)
 
         @SuppressLint("SetTextI18n")
-        fun bindView(context: Context, word: Word, listener: HomeListener?) {
+        fun bindView(context: Context, word: Word, listener: HomeListener?, size: Int) {
 
-            tvId.text = "# ${word.id}"
+            tvId.text = "$adapterPosition / $size"
             tvMainText.text = word.en.capitalizeWords()
             tvSecondText.text = word.bn
 
@@ -90,9 +97,19 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
 
 
             if (word.sentences.isNotEmpty()) {
-                tvSentences.setHtmlText(word.sentences[0])
-            }
 
+                if (word.sentences.size > 1) {
+                    if (word.sentences[0].length < word.sentences[1].length) {
+                        tvSentences.setHtmlText(word.sentences[0])
+                    } else {
+                        tvSentences.setHtmlText(word.sentences[1])
+                    }
+                } else {
+
+                    tvSentences.setHtmlText(word.sentences[0])
+                }
+
+            }
 
             bindBookmarkIcon(context, word)
 
@@ -106,19 +123,27 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
             }
             imClose.setOnClickListener { listener?.onCloseClick(word, adapterPosition) }
 
-            tvKnow.setOnClickListener { listener?.onActionClick(word, I_KNOW) }
+            tvKnow.setOnClickListener {
+                listener?.onActionClick(
+                    word, I_KNOW,
+                    adapterPosition
+                )
+
+            }
 
             tvLearning.setOnClickListener {
                 listener?.onActionClick(
                     word,
-                    LEARNING
+                    LEARNING,
+                    adapterPosition
                 )
             }
 
             tvNotify.setOnClickListener {
                 listener?.onActionClick(
                     word,
-                    NOTIFY_ME
+                    NOTIFY_ME,
+                    adapterPosition
                 )
             }
 
@@ -162,7 +187,7 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
         fun onSpeakClick(word: Word)
         fun onBookmarkClick(word: Word, position: Int)
         fun onCloseClick(word: Word, position: Int)
-        fun onActionClick(word: Word, type: String)
+        fun onActionClick(word: Word, type: String, position: Int)
     }
 
 

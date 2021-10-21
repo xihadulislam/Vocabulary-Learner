@@ -25,12 +25,8 @@ class DashboardFragment : Fragment() {
     }
 
     private lateinit var viewModel: DashboardViewModel
-
     private lateinit var recyclerView: RecyclerView
-
-    private lateinit var adapter: DashboardAdapter
-
-    private lateinit var sliderAdapter: CategorySliderAdapter
+    private lateinit var sliderAdapter: DashboardAdapter
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
 
@@ -47,30 +43,10 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-//        recyclerView = view.findViewById(R.id.dashboardList)
-//        adapter = DashboardAdapter(requireContext())
-//
-//        recyclerView.also {
-//            it.setHasFixedSize(true)
-//            it.setItemViewCacheSize(20)
-//            ViewCompat.setNestedScrollingEnabled(it, false)
-//            it.layoutManager = LinearLayoutManager(requireContext())
-//            it.adapter = adapter
-//        }
-//
-//        val list = mutableListOf<String>()
-//        list.add("trtertre")
-//        list.add("trtertre")
-//        list.add("trtertre")
-//        list.add("trtertre")
-//
-//        adapter.setUpdatedList(list)
-
         viewPager = view.findViewById(R.id.newsSliderViewPagerID)
         tabLayout = view.findViewById(R.id.tabIndicatorId)
 
-
-        sliderAdapter = CategorySliderAdapter(requireContext())
+        sliderAdapter = DashboardAdapter(requireContext())
         viewPager.adapter = sliderAdapter
         viewPager.clipToPadding = false
         viewPager.clipChildren = false
@@ -80,12 +56,11 @@ class DashboardFragment : Fragment() {
         val compositePageTransformer = CompositePageTransformer()
         compositePageTransformer.addTransformer(MarginPageTransformer(40))
         compositePageTransformer.addTransformer { page, position ->
-
             val r = 1 - abs(position)
             page.scaleY = 0.85f + r * 0.15f
         }
-        viewPager.setPageTransformer(compositePageTransformer)
 
+        viewPager.setPageTransformer(compositePageTransformer)
 
         val timerTask: TimerTask = object : TimerTask() {
             override fun run() {
@@ -96,13 +71,6 @@ class DashboardFragment : Fragment() {
         }
       //  timer = Timer()
       //  timer?.schedule(timerTask, 6000, 6000)
-
-
-        val list = mutableListOf<String>()
-        list.add("trtertre")
-        list.add("trtertre")
-        list.add("trtertre")
-        list.add("trtertre")
 
         setUpNewsSlider(getDashboards())
 

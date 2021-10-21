@@ -21,6 +21,7 @@ import com.project.wordlearner.R
 import com.littlemango.stacklayoutmanager.StackLayoutManager.*
 
 import com.littlemango.stacklayoutmanager.DefaultAnimation
+import com.project.wordlearner.common.AppConstants
 import com.project.wordlearner.data.db.AppDatabase
 import com.project.wordlearner.data.models.Word
 import com.project.wordlearner.data.preference.AppSharedPref
@@ -194,8 +195,11 @@ class HomeFragment : Fragment(), HomeAdapter.HomeListener, TextToSpeech.OnInitLi
 
     }
 
-    override fun onActionClick(word: Word, type: String) {
-
+    override fun onActionClick(word: Word, type: String, position: Int) {
+        viewModel.stageUpdate(word, type)
+        if (type.equals(AppConstants.I_KNOW, true)) {
+            adapter.deleteITem(position)
+        }
     }
 
 
