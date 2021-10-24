@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_google_card.xml" value="0.35333333333333333" />
+        <entry key="app/src/main/res/drawable/bg_google_card_pressed.xml" value="0.35333333333333333" />
+        <entry key="app/src/main/res/drawable/bg_guest_card.xml" value="0.35333333333333333" />
+        <entry key="app/src/main/res/drawable/bg_guest_card_normal.xml" value="0.35333333333333333" />
+        <entry key="app/src/main/res/drawable/bg_guest_card_pressed.xml" value="0.35333333333333333" />
+        <entry key="app/src/main/res/drawable/ic_google_icon.xml" value="0.35333333333333333" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/item_explore.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/item_home_card.xml" value="0.34270833333333334" />
       </map>
@@ -10,5 +18,12 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

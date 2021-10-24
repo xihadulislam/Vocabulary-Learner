@@ -24,14 +24,6 @@ class AppConstants {
         const val ID = "ID"
 
 
-
-
-
-
-
-
-
-        
         const val I_KNOW = "iKnow"
         const val  LEARNING ="learning"
         const val  NOTIFY_ME = "notifyMe"

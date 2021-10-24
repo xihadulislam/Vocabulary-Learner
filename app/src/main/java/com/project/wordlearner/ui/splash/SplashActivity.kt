@@ -16,6 +16,7 @@ import com.project.wordlearner.data.models.Word
 import com.project.wordlearner.data.models.WordDemo
 import com.project.wordlearner.data.preference.AppSharedPref
 import com.project.wordlearner.data.repositories.WordRepo
+import com.project.wordlearner.ui.login.LoginActivity
 import com.project.wordlearner.ui.main.MainActivity
 import java.io.IOException
 
@@ -44,12 +45,12 @@ class SplashActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, factory).get(SplashViewModel::class.java)
 
 
-       viewModel.getTodayWords()
+        viewModel.getTodayWords()
 
-       // getData()
+        // getData()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }, 2000)
     }
@@ -60,9 +61,9 @@ class SplashActivity : AppCompatActivity() {
         val list = getQuestionsListFromJsonString(agentsJsonFileString).toMutableList()
         Log.d("jjj", "getData: ${list.size}")
 
-        Log.d(TAG, "getData: "+Gson().toJson(list[0]))
+        Log.d(TAG, "getData: " + Gson().toJson(list[0]))
 
-       viewModel.storeQBFromLocal(list)
+        viewModel.storeQBFromLocal(list)
     }
 
     private fun getQuestionsListFromJsonString(json: String?): List<WordDemo> {
