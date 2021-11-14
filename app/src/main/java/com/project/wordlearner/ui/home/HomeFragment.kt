@@ -195,11 +195,11 @@ class HomeFragment : Fragment(), HomeAdapter.HomeListener, TextToSpeech.OnInitLi
 
     }
 
-    override fun onActionClick(word: Word, type: String, position: Int) {
-        viewModel.stageUpdate(word, type)
-        if (type.equals(AppConstants.I_KNOW, true)) {
-            adapter.deleteITem(position)
-        }
+    override fun onActionClick(word: Word, position: Int) {
+        viewModel.stageUpdate(word)
+
+        manager.requestSimpleAnimationsInNextLayout()
+
     }
 
 

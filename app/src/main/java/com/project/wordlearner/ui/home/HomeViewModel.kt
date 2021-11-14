@@ -41,9 +41,8 @@ class HomeViewModel(
         }
     }
 
-    fun stageUpdate(word: Word, type: String) {
+    fun stageUpdate(word: Word) {
         viewModelScope.launch(Dispatchers.IO) {
-            word.stage = type
             wordRepo.updateWord(word)
             val list = Gson().fromJson(appSharedPref.getTodayWordList(), Array<Word>::class.java)
                 .toMutableList()

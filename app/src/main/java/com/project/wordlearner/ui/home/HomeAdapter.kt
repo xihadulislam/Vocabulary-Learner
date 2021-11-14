@@ -52,10 +52,10 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
     @SuppressLint("NotifyDataSetChanged")
     fun deleteITem(position: Int) {
 
-        if (position<mList.size){
+        if (position < mList.size) {
             mList.removeAt(position)
             notifyItemRangeChanged(position, mList.size)
-        }else{
+        } else {
             notifyDataSetChanged()
         }
 
@@ -112,6 +112,7 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
             }
 
             bindBookmarkIcon(context, word)
+            bindActionIcon(context, word)
 
             itemView.setOnClickListener { listener?.onItemClick(word) }
             innerRoot.setOnClickListener { listener?.onItemClick(word) }
@@ -124,27 +125,46 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
             imClose.setOnClickListener { listener?.onCloseClick(word, adapterPosition) }
 
             tvKnow.setOnClickListener {
+
+                if (word.stage.equals(I_KNOW, true)) {
+                    return@setOnClickListener
+                }
+
+                word.stage = I_KNOW
+
                 listener?.onActionClick(
-                    word, I_KNOW,
+                    word,
                     adapterPosition
                 )
+
+                bindActionIcon(context,word)
 
             }
 
             tvLearning.setOnClickListener {
+
+                if (word.stage.equals(LEARNING, true)) {
+                    return@setOnClickListener
+                }
+                word.stage = LEARNING
                 listener?.onActionClick(
                     word,
-                    LEARNING,
                     adapterPosition
                 )
+                bindActionIcon(context,word)
             }
 
             tvNotify.setOnClickListener {
+
+                if (word.stage.equals(NOTIFY_ME, true)) {
+                    return@setOnClickListener
+                }
+                word.stage = NOTIFY_ME
                 listener?.onActionClick(
                     word,
-                    NOTIFY_ME,
                     adapterPosition
                 )
+                bindActionIcon(context,word)
             }
 
             imSpeak.setOnClickListener {
@@ -177,6 +197,38 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
 
         }
 
+        final fun bindActionIcon(context: Context, word: Word) {
+
+
+            if (word.stage.equals(NOTIFY_ME, true)) {
+
+                tvNotify.background = ContextCompat.getDrawable(context, R.drawable.bg_grey_card)
+            } else {
+                tvNotify.background =
+                    ContextCompat.getDrawable(context, R.drawable.bg_logout_card_normal)
+            }
+
+
+
+            if (word.stage.equals(LEARNING, true)) {
+
+                tvLearning.background = ContextCompat.getDrawable(context, R.drawable.bg_grey_card)
+            } else {
+                tvLearning.background =
+                    ContextCompat.getDrawable(context, R.drawable.bg_preparation_screen)
+            }
+
+            if (word.stage.equals(I_KNOW, true)) {
+
+                tvKnow.background = ContextCompat.getDrawable(context, R.drawable.bg_grey_card)
+            } else {
+                tvKnow.background =
+                    ContextCompat.getDrawable(context, R.drawable.bg_result_point_card_normal)
+            }
+
+
+        }
+
 
     }
 
@@ -187,7 +239,7 @@ class HomeAdapter(val context: Context) : RecyclerView.Adapter<HomeAdapter.MyVie
         fun onSpeakClick(word: Word)
         fun onBookmarkClick(word: Word, position: Int)
         fun onCloseClick(word: Word, position: Int)
-        fun onActionClick(word: Word, type: String, position: Int)
+        fun onActionClick(word: Word, position: Int)
     }
 
 
