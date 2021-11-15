@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.project.wordlearner.R
 import com.project.wordlearner.databinding.ActivityMainBinding
+import com.xihad.androidutils.AndroidUtils
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +37,9 @@ class MainActivity : AppCompatActivity() {
         // setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        navView.selectedItemId = R.id.navigation_search
+      //  navView.selectedItemId = R.id.navigation_search
+
+        AndroidUtils.init(this)
 
     }
 }

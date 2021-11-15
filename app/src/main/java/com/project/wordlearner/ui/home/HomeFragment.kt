@@ -1,20 +1,29 @@
 package com.project.wordlearner.ui.home
 
+import android.app.ActionBar
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.littlemango.stacklayoutmanager.StackLayoutManager
 import com.project.wordlearner.R
@@ -30,6 +39,9 @@ import com.project.wordlearner.ui.details.WordDetailsActivity
 import com.project.wordlearner.ui.splash.SplashViewModel
 import com.project.wordlearner.ui.splash.SplashViewModelFactory
 import com.xihad.androidutils.AndroidUtils
+import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.fragment_home.*
+import java.lang.Exception
 import java.util.*
 
 
@@ -53,6 +65,7 @@ class HomeFragment : Fragment(), HomeAdapter.HomeListener, TextToSpeech.OnInitLi
     private lateinit var manager: StackLayoutManager
 
     private var tts: TextToSpeech? = null
+    private var length = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -169,7 +182,7 @@ class HomeFragment : Fragment(), HomeAdapter.HomeListener, TextToSpeech.OnInitLi
         val list = Gson().fromJson(appSharedPref.getTodayWordList(), Array<Word>::class.java)
             .toMutableList()
         list.shuffle()
-
+        length = list.size
         return list
     }
 
@@ -197,8 +210,95 @@ class HomeFragment : Fragment(), HomeAdapter.HomeListener, TextToSpeech.OnInitLi
 
     override fun onActionClick(word: Word, position: Int) {
         viewModel.stageUpdate(word)
+        showSnack(word, position)
+    }
 
-        manager.requestSimpleAnimationsInNextLayout()
+    private fun showSnack(word: Word, position: Int) {
+
+        val customSnackBar = Snackbar.make(rootView, "", Snackbar.LENGTH_SHORT)
+
+        val view = customSnackBar.view
+        val layoutParams = ActionBar.LayoutParams(customSnackBar.view.layoutParams)
+        layoutParams.gravity = Gravity.TOP
+        layoutParams.setMargins(0, 30, 0, 0)
+        view.layoutParams = layoutParams
+
+
+        val layout = customSnackBar.view as Snackbar.SnackbarLayout
+        val customSnackView = layoutInflater.inflate(R.layout.snack_bar_layout, null)
+
+        val snackBarLayout = customSnackView.findViewById(R.id.snackbar_id) as ConstraintLayout
+
+        val close = customSnackView.findViewById(R.id.snackBarClose) as ImageView
+        val icon = customSnackView.findViewById(R.id.imageView) as ImageView
+        val snackMsg = customSnackView.findViewById(R.id.snackBarText) as TextView
+
+
+        val msg = "Scussfully added"
+
+        snackMsg.text = msg
+
+        icon.setImageDrawable(
+            ContextCompat.getDrawable(
+                requireContext(),
+                R.drawable.ic_notifications_black_24dp
+            )
+        )
+        icon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.white))
+
+        when {
+            word.stage.equals(AppConstants.NOTIFY_ME, true) -> {
+
+
+                snackBarLayout.setBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.colorSecondary
+                    )
+                )
+            }
+            word.stage.equals(AppConstants.I_KNOW, true) -> {
+                snackBarLayout.setBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.green_inactive
+                    )
+                )
+
+            }
+            else -> {
+                snackBarLayout.setBackgroundColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.colorPrimaryDark
+                    )
+                )
+            }
+        }
+
+        close.setOnClickListener {
+            customSnackBar.dismiss()
+        }
+
+        // We can also customize the above controls
+        layout.setPadding(0, 0, 0, 0)
+        layout.addView(customSnackView, 0)
+
+        customSnackBar.addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
+            override fun onShown(transientBottomBar: Snackbar?) {
+                super.onShown(transientBottomBar)
+            }
+
+            override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                super.onDismissed(transientBottomBar, event)
+
+                if (position + 1 < length) {
+                    recyclerView.smoothScrollToPosition(position + 1)
+                }
+            }
+        })
+
+        customSnackBar.show()
 
     }
 
