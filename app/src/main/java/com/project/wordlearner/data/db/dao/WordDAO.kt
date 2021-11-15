@@ -32,7 +32,10 @@ interface WordDAO : BaseDAO<Word> {
 
     // @Query("SELECT * FROM word WHERE pron LIKE '%' || :param || '%'  OR  en LIKE '%' || :param || '%'  Limit 20")
     @Query("SELECT * FROM word WHERE en LIKE:param or  en LIKE  :param || '%'  Limit 20")
-    fun searchIt(param: String?): List<Word>
+    fun searchItOnEnglish(param: String?): List<Word>
+
+   @Query("SELECT * FROM word WHERE bn LIKE:param or  bn LIKE  :param || '%'  Limit 20")
+    fun searchItOnBangla(param: String?): List<Word>
 
 
 }

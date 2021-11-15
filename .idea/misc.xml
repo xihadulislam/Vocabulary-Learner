@@ -5,9 +5,12 @@
       <map>
         <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/drawable/bg_grey_card.xml" value="0.3828125" />
         <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/drawable/bg_result_point_card_normal.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/font/aclonica.xml" value="0.3848958333333333" />
         <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/fragment_game.xml" value="0.35487232933819696" />
         <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/item_home_card.xml" value="0.3546875" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/search_fragment.xml" value="0.22" />
       </map>
     </option>
   </component>

@@ -67,7 +67,7 @@
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/circleImageView3"
+                    android:id="@+id/imSwap"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:src="@color/white"
@@ -80,14 +80,14 @@
                 </de.hdodenhof.circleimageview.CircleImageView>
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/imSwapIcon"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:src="@drawable/ic_swap_horiz"
-                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView3"
-                    app:layout_constraintEnd_toEndOf="@+id/circleImageView3"
-                    app:layout_constraintStart_toStartOf="@+id/circleImageView3"
-                    app:layout_constraintTop_toTopOf="@+id/circleImageView3"
+                    app:layout_constraintBottom_toBottomOf="@+id/imSwap"
+                    app:layout_constraintEnd_toEndOf="@+id/imSwap"
+                    app:layout_constraintStart_toStartOf="@+id/imSwap"
+                    app:layout_constraintTop_toTopOf="@+id/imSwap"
                     app:tint="@color/colorPrimary">
 
                 </ImageView>
@@ -101,11 +101,12 @@
                     android:background="@drawable/bg_carve_round_"
                     android:orientation="horizontal"
                     android:padding="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView3"
-                    app:layout_constraintEnd_toStartOf="@+id/circleImageView3"
-                    app:layout_constraintTop_toTopOf="@+id/circleImageView3">
+                    app:layout_constraintBottom_toBottomOf="@+id/imSwap"
+                    app:layout_constraintEnd_toStartOf="@+id/imSwap"
+                    app:layout_constraintTop_toTopOf="@+id/imSwap">
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/firstFlag"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
@@ -114,6 +115,7 @@
                     </de.hdodenhof.circleimageview.CircleImageView>
 
                     <TextView
+                        android:id="@+id/firstLang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -138,11 +140,12 @@
                     android:background="@drawable/bg_carve_round_"
                     android:orientation="horizontal"
                     android:padding="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView3"
-                    app:layout_constraintStart_toEndOf="@+id/circleImageView3"
-                    app:layout_constraintTop_toTopOf="@+id/circleImageView3">
+                    app:layout_constraintBottom_toBottomOf="@+id/imSwap"
+                    app:layout_constraintStart_toEndOf="@+id/imSwap"
+                    app:layout_constraintTop_toTopOf="@+id/imSwap">
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/secondFlag"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
@@ -151,6 +154,7 @@
                     </de.hdodenhof.circleimageview.CircleImageView>
 
                     <TextView
+                        android:id="@+id/secondLang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -168,7 +172,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/imInfo"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginTop="24dp"
@@ -189,11 +193,11 @@
                     android:textColor="@color/white"
                     android:textSize="36sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/circleImageView3"
+                    app:layout_constraintBottom_toTopOf="@+id/imSwap"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.82">
+                    app:layout_constraintVertical_bias="0.74">
 
                 </TextView>
 

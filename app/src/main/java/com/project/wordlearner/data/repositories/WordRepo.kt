@@ -23,8 +23,12 @@ class WordRepo(private val appDatabase: AppDatabase) {
         return appDatabase.wordDAO().getWords()
     }
 
-    fun getSearchResult(string: String): List<Word> {
-        return appDatabase.wordDAO().searchIt(string)
+    fun searchItOnEnglish(string: String): List<Word> {
+        return appDatabase.wordDAO().searchItOnEnglish(string)
+    }
+
+  fun searchItOnBangla(string: String): List<Word> {
+        return appDatabase.wordDAO().searchItOnBangla(string)
     }
 
 

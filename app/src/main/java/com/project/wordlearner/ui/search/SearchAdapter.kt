@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.project.wordlearner.R
+import com.project.wordlearner.common.AppConstants
 import com.project.wordlearner.common.setHtmlText
 import com.project.wordlearner.data.models.Word
+import com.project.wordlearner.data.preference.AppSharedPref
 import com.project.wordlearner.ui.home.HomeAdapter
 
-class SearchAdapter() :
+class SearchAdapter(var appSharedPref: AppSharedPref) :
     RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
 
     private var mList: MutableList<Word> = mutableListOf()
@@ -39,7 +41,7 @@ class SearchAdapter() :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bindView(mList[position], listener)
+        holder.bindView(mList[position], listener, appSharedPref)
 
 
         if (position == mList.size - 1) {
@@ -60,8 +62,14 @@ class SearchAdapter() :
         var view: View = itemView.findViewById(R.id.view)
 
         @SuppressLint("SetTextI18n")
-        fun bindView(word: Word, listener: SearchListener?) {
-            tvSearch.setHtmlText(word.en)
+        fun bindView(word: Word, listener: SearchListener?, appSharedPref: AppSharedPref) {
+
+
+            if (appSharedPref.getSearchType().equals(AppConstants.E_TO_B, true)) {
+                tvSearch.setHtmlText(word.en)
+            } else {
+                tvSearch.setHtmlText(word.bn)
+            }
 
             itemView.setOnClickListener { listener?.onItemClick(word) }
 

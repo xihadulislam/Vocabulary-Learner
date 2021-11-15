@@ -3,6 +3,7 @@ package com.project.wordlearner.data.preference
 import android.content.Context
 import com.okcodex.mentalmathmaster.data.preference.KPSettings
 import com.project.wordlearner.common.AppConstants
+import com.project.wordlearner.common.AppConstants.Companion.E_TO_B
 
 
 class AppSharedPref(context: Context) {
@@ -17,7 +18,6 @@ class AppSharedPref(context: Context) {
     fun isDbUpdateNeeded(): Boolean {
         return kpSettings.getBoolValue(AppConstants.DB_UPDATE_NEEDED, true)
     }
-
 
     fun setId(value: Int) {
         kpSettings.setIntValue(AppConstants.ID, value)
@@ -51,6 +51,14 @@ class AppSharedPref(context: Context) {
 
     fun getTodayDate(): String {
         return kpSettings.getStringValue(AppConstants.TODAY_DATE, "")
+    }
+
+    fun setSearchType(value: String) {
+        kpSettings.setStringValue(AppConstants.SEARCH_TYPE, value)
+    }
+
+    fun getSearchType(): String {
+        return kpSettings.getStringValue(AppConstants.SEARCH_TYPE, E_TO_B)
     }
 
 

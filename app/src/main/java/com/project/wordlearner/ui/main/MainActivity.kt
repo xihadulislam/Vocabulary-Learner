@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         // setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        navView.selectedItemId = R.id.navigation_dashboard
+        navView.selectedItemId = R.id.navigation_search
 
     }
 }

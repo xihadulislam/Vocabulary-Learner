@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.RotateAnimation
 import android.widget.EditText
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -20,15 +22,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.project.wordlearner.R
-import com.project.wordlearner.common.hideKeyboard
-import com.project.wordlearner.common.isKeyboardVisible
-import com.project.wordlearner.common.showKeyboard
 import com.project.wordlearner.data.db.AppDatabase
 import com.project.wordlearner.data.models.Word
 import com.project.wordlearner.data.preference.AppSharedPref
 import com.project.wordlearner.data.repositories.WordRepo
 import com.project.wordlearner.ui.details.WordDetailsActivity
+import kotlinx.android.synthetic.main.search_fragment.*
 import java.util.*
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.project.wordlearner.common.*
+
+import android.view.animation.LinearInterpolator
 
 
 class SearchFragment : Fragment(), SearchAdapter.SearchListener {
@@ -81,7 +86,7 @@ class SearchFragment : Fragment(), SearchAdapter.SearchListener {
         recyclerView = view.findViewById(R.id.searchList)
 
 
-        adapter = SearchAdapter()
+        adapter = SearchAdapter(appSharedPref)
         recyclerView.also {
             it.setHasFixedSize(true)
             it.setItemViewCacheSize(20)
@@ -96,10 +101,81 @@ class SearchFragment : Fragment(), SearchAdapter.SearchListener {
             adapter.setUpdatedList(list)
         })
 
+
+        imInfo.setOnClickListener {
+            showInfoDialog()
+        }
+
+        swapFlag()
+
+        imSwap.setOnClickListener {
+            if (appSharedPref.getSearchType().equals(AppConstants.E_TO_B, true)) {
+                appSharedPref.setSearchType(AppConstants.B_TO_E)
+            } else {
+                appSharedPref.setSearchType(AppConstants.E_TO_B)
+            }
+            swapFlag()
+            rotateImSwapIcon()
+
+            adapter.setUpdatedList(listOf())
+            etSearch.setText("")
+
+        }
+
+    }
+
+    private fun rotateImSwapIcon() {
+        val rotate = RotateAnimation(
+            0f,
+            180f,
+            Animation.RELATIVE_TO_SELF,
+            0.5f,
+            Animation.RELATIVE_TO_SELF,
+            0.5f
+        )
+        rotate.duration = 600
+        rotate.interpolator = LinearInterpolator()
+        imSwapIcon.startAnimation(rotate)
+    }
+
+    private fun swapFlag() {
+
+        if (appSharedPref.getSearchType().equals(AppConstants.E_TO_B, true)) {
+
+            ImageUtil.loadOfflineImage(firstFlag, R.drawable.en_flag)
+            firstLang.text = "English"
+
+            ImageUtil.loadOfflineImage(secondFlag, R.drawable.bd_flag)
+            secondLang.text = "বাংলা"
+
+            etSearch.hint = "Search here"
+        } else {
+
+            ImageUtil.loadOfflineImage(secondFlag, R.drawable.en_flag)
+            secondLang.text = "English"
+
+            ImageUtil.loadOfflineImage(firstFlag, R.drawable.bd_flag)
+            firstLang.text = "বাংলা"
+
+            etSearch.hint = "এখানে অনুসন্ধান করুন"
+        }
+
+    }
+
+
+    private fun showInfoDialog() {
+
+        MaterialAlertDialogBuilder(requireContext(), R.style.RoundShapeTheme)
+            .setTitle("Your message goes here.")
+            .setMessage("Keep it short but clear." + getString(R.string.dummy))
+            .setPositiveButton(
+                "GOT IT"
+            ) { _, i -> }
+            .show()
+
     }
 
     private fun initSearchBox() {
-
         etSearch.setOnKeyListener { v, _, event ->
             when {
                 ((event.action == KeyEvent.ACTION_DOWN)) -> {
