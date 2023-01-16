@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight_white"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <com.project.wordlearner.common.BounceScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:bounceDelay="600"
+        app:damping="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/newsSliderViewPagerID"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:layout_marginTop="10dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:paddingBottom="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabIndicatorId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/colorPrimaryLight_white"
+                app:tabBackground="@drawable/indicator_selector"
+                app:tabIndicatorHeight="0dp" />
+
+
+        </LinearLayout>
+
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="vertical">-->
+
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:id="@+id/constraintLayout"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="160dp"-->
+        <!--                android:background="@drawable/bg_card_dashboard"-->
+        <!--                android:visibility="gone"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+
+        <!--                <de.hdodenhof.circleimageview.CircleImageView-->
+        <!--                    android:layout_width="40dp"-->
+        <!--                    android:layout_height="40dp"-->
+        <!--                    android:layout_marginTop="16dp"-->
+        <!--                    android:layout_marginEnd="16dp"-->
+        <!--                    android:src="@drawable/avater"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--                </de.hdodenhof.circleimageview.CircleImageView>-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/textView"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="32dp"-->
+        <!--                    android:alpha="0.8"-->
+        <!--                    android:text="Completed"-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent"-->
+        <!--                    app:layout_constraintVertical_bias="0.48000002">-->
+
+        <!--                </TextView>-->
+
+        <!--                <TextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="35% of vocabulary"-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    android:textSize="32sp"-->
+        <!--                    app:layout_constraintStart_toStartOf="@+id/textView"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/textView">-->
+
+        <!--                </TextView>-->
+
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--            <androidx.recyclerview.widget.RecyclerView-->
+        <!--                android:id="@+id/dashboardList"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:padding="12dp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"-->
+        <!--                tools:listitem="@layout/item_explore">-->
+
+        <!--            </androidx.recyclerview.widget.RecyclerView>-->
+
+
+        <!--        </LinearLayout>-->
+
+
+    </com.project.wordlearner.common.BounceScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

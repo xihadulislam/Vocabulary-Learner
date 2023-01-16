@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.project.wordlearner.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.project.wordlearner.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/search_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.project.wordlearner.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_game"
+        android:name="com.project.wordlearner.ui.game.GameFragment"
+        android:label="@string/title_game"
+        tools:layout="@layout/fragment_game" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.project.wordlearner.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/profile_fragment" />
+</navigation>

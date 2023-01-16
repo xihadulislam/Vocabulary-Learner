@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_splash_bg"
+    tools:context=".ui.login.LoginActivity">
+
+
+    <TextView
+        android:id="@+id/tvMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome back !"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:alpha="0.8"
+        android:text="Sign in with"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/googleLogin"
+        app:layout_constraintEnd_toEndOf="@+id/googleLogin"
+        app:layout_constraintStart_toStartOf="@+id/googleLogin"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainText"
+        app:layout_constraintVertical_bias="0.87">
+
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/googleLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_google_card"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="GOOGLE"
+        android:textColor="@color/white_deep"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainText"
+        app:layout_constraintVertical_bias="0.59000003">
+
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/labelOr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="OR"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/googleLogin" />
+
+    <TextView
+        android:id="@+id/geustLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_guest_card"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="As a stranger"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelOr">
+
+    </TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

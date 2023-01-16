@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight_white"
+    tools:context=".ui.search.SearchFragment">
+
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--     -->
+
+    <!--    </ScrollView>-->
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="540dp"
+        android:layout_gravity="center"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="40dp"
+                android:alpha="0.3"
+                android:scaleType="fitStart"
+                android:src="@drawable/ic_illustration_doodle_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38">
+
+            </ImageView>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="440dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imSwap"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.88">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <ImageView
+                    android:id="@+id/imSwapIcon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_swap_horiz"
+                    app:layout_constraintBottom_toBottomOf="@+id/imSwap"
+                    app:layout_constraintEnd_toEndOf="@+id/imSwap"
+                    app:layout_constraintStart_toStartOf="@+id/imSwap"
+                    app:layout_constraintTop_toTopOf="@+id/imSwap"
+                    app:tint="@color/colorPrimary">
+
+                </ImageView>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout12"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_carve_round_"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imSwap"
+                    app:layout_constraintEnd_toStartOf="@+id/imSwap"
+                    app:layout_constraintTop_toTopOf="@+id/imSwap">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/firstFlag"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/en_flag">
+
+                    </de.hdodenhof.circleimageview.CircleImageView>
+
+                    <TextView
+                        android:id="@+id/firstLang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center"
+                        android:text="English"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout13"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_carve_round_"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imSwap"
+                    app:layout_constraintStart_toEndOf="@+id/imSwap"
+                    app:layout_constraintTop_toTopOf="@+id/imSwap">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/secondFlag"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bd_flag">
+
+                    </de.hdodenhof.circleimageview.CircleImageView>
+
+                    <TextView
+                        android:id="@+id/secondLang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center"
+                        android:text="Bangla"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/imInfo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_info"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white">
+
+                </ImageView>
+
+
+                <TextView
+                    android:id="@+id/tvMainText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/imSwap"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.74">
+
+                </TextView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:alpha="0.8"
+                    android:text="Let's Plan your Monday ? "
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/tvMainText"
+                    app:layout_constraintStart_toStartOf="@+id/tvMainText"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMainText">
+
+                </TextView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvHelper"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contInfoLayout">
+
+            </TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSearch"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHelper">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:src="@drawable/ic_search_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </ImageView>
+
+
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@color/white"
+                        android:hint="Search here"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView4"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:paddingBottom="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardSearch">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

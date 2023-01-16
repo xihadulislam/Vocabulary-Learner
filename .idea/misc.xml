@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/xihad/.gradle/caches/transforms-2/files-2.1/f737d11daf8e101e54cb49c7b144c834/jetified-androidUtils-1.0.5/res/drawable/sn_default.xml" value="0.36512820512820515" />
+        <entry key="..\:/Users/xihad/.gradle/caches/transforms-2/files-2.1/f737d11daf8e101e54cb49c7b144c834/jetified-androidUtils-1.0.5/res/layout/snack_bar_layout.xml" value="0.3546875" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/drawable/bg_grey_card.xml" value="0.3828125" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/drawable/bg_result_point_card_normal.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/font/aclonica.xml" value="0.3848958333333333" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/fragment_game.xml" value="0.35487232933819696" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/item_home_card.xml" value="0.3546875" />
+        <entry key="..\:/Users/xihad/StudioProjects/word-learner/app/src/main/res/layout/search_fragment.xml" value="0.22" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

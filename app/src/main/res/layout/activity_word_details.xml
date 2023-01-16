@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.details.WordDetailsActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="6dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginBottom="179dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGlass"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tvId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="# 5445"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+
+                <ImageView
+                    android:id="@+id/imClose"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imBookmark"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_bookmark_boarder"
+                    app:layout_constraintBottom_toBottomOf="@+id/imClose"
+                    app:layout_constraintEnd_toStartOf="@+id/imClose"
+                    app:layout_constraintTop_toTopOf="@+id/imClose"
+                    app:tint="@color/white">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imShare"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintBottom_toBottomOf="@+id/imBookmark"
+                    app:layout_constraintEnd_toStartOf="@+id/imBookmark"
+                    app:layout_constraintTop_toTopOf="@+id/imBookmark"
+                    app:tint="@color/white">
+
+                </ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/tvMainText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="6dp"
+                    android:text="Carpet"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/imSpeak"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/imSpeak"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_speaker"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvMainText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvMainText"
+                    app:tint="@color/grey_active">
+
+                </ImageView>
+
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMainText">
+
+                </View>
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="4dp"
+                    android:fillViewport="true"
+                    android:scrollbars="none"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tvSecondText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:padding="6dp"
+                            android:text="গালিচা"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:alpha="0.8"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="Synonyms "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSecondText">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_en_synonyms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="16dp"
+                            android:alpha="0.8"
+                            android:ellipsize="end"
+                            android:letterSpacing="0.03"
+                            android:lineHeight="22sp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="- cover, overlay, overspread, living roo living room was carpeted in pinkm was carpeted in pink blanket, rug "
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:alpha="0.8"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="প্রতিশব্দ"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_en_synonyms">
+
+                        </TextView>
+
+
+                        <TextView
+                            android:id="@+id/tv_bn_synonyms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="16dp"
+                            android:alpha="0.8"
+                            android:ellipsize="end"
+                            android:letterSpacing="0.03"
+                            android:lineHeight="22sp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="- শতরঁচি, কার্পেট, আস্তর ,আস্তরণ "
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+                        </TextView>
+
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:alpha="0.8"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="Sentence"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_bn_synonyms">
+
+                        </TextView>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/sentencesList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="6dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorGlass"
+                    android:padding="8dp"
+                    android:weightSum="3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvNotify"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_logout_card_normal"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="Notify me"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tvLearning"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_preparation_screen"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="Learning"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tvKnow"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_result_point_card_normal"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="I know"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
